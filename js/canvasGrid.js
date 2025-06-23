@@ -286,7 +286,9 @@ class CanvasGrid {
       .trim();
     const fontName = style.getPropertyValue("--font-primary").trim();
     const gridLineColor = style.getPropertyValue("--border-color").trim();
-    const blockOutlineColor = style.getPropertyValue("--bg-secondary").trim();
+    const blockOutlineColor = style
+      .getPropertyValue("--minecraft-block-outline")
+      .trim();
     const fadedBlockColor = style
       .getPropertyValue("--faded-block-color")
       .trim();

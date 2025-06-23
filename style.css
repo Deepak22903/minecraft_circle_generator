@@ -24,6 +24,7 @@
   --minecraft-block-active: #89b4fa; /* Mauve */
   --minecraft-block-glow: 0 0 10px #8839ef;
   --faded-block-color: #bcc0cc;
+  --minecraft-block-outline: #4c4f69; /* NEW: Dark outline for light mode */
 }
 
 /* --- DARK THEME (CATPPUCCIN MACCHIATO) --- */
@@ -45,6 +46,7 @@
   --minecraft-block-active: #89b4fa; /* Blue */
   --minecraft-block-glow: 0 0 12px #89b4fa;
   --faded-block-color: #45475a;
+  --minecraft-block-outline: #181825; /* NEW: Dark outline for dark mode */
 }
 
 body {

@@ -8,7 +8,7 @@ const state = {
   _isLocked: true,
   _zoom: 1,
   _pan: { x: 0, y: 0 },
-  _theme: "dark",
+  _theme: "light",
   _showNumbers: true,
   _colorSegments: true,
   _isBuilding: false,

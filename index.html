@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced AI Minecraft Shape Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <div class="title">
+          <h1>Minecraft Shape Generator</h1>
+          <p class="subtitle">
+            Craft perfect shapes with a high-performance canvas.
+          </p>
+        </div>
+        <div class="top-controls">
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.5C12.28 2.5 12.5 2.72 12.5 3V5C12.5 5.28 12.28 5.5 12 5.5C11.72 5.5 11.5 5.28 11.5 5V3C11.5 2.72 11.72 2.5 12 2.5ZM5.71 5.71C5.9 5.52 6.21 5.52 6.4 5.71L7.79 7.1C7.98 7.29 7.98 7.6 7.79 7.79C7.6 7.98 7.29 7.98 7.1 7.79L5.71 6.4C5.52 6.21 5.52 5.9 5.71 5.71ZM18.29 5.71C18.48 5.9 18.48 6.21 18.29 6.4L16.9 7.79C16.71 7.98 16.4 7.98 16.21 7.79C16.02 7.6 16.02 7.29 16.21 7.1L17.59 5.71C17.78 5.52 18.1 5.52 18.29 5.71ZM2.5 12C2.5 11.72 2.72 11.5 3 11.5H5C5.28 11.5 5.5 11.72 5.5 12C5.5 12.28 5.28 12.5 5 12.5H3C2.72 12.5 2.5 12.28 2.5 12ZM19 11.5C18.72 11.5 18.5 11.72 18.5 12C18.5 12.28 18.72 12.5 19 12.5H21C21.28 12.5 21.5 12.28 21.5 12C21.5 11.72 21.28 11.5 21 11.5H19ZM12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7ZM5.71 18.29C5.52 18.1 5.52 17.78 5.71 17.59L7.1 16.21C7.29 16.02 7.6 16.02 7.79 16.21C7.98 16.4 7.98 16.71 7.79 16.9L6.4 18.29C6.21 18.48 5.9 18.48 5.71 18.29ZM18.29 18.29C18.1 18.48 17.78 18.48 17.59 18.29L16.21 16.9C16.02 16.71 16.02 16.4 16.21 16.21C16.4 16.02 16.71 16.02 16.9 16.21L18.29 17.59C18.48 17.78 18.48 18.1 18.29 18.29ZM12 18.5C11.72 18.5 11.5 18.72 11.5 19V21C11.5 21.28 11.72 21.5 12 21.5C12.28 21.5 12.5 21.28 12.5 21V19C12.5 18.72 12.28 18.5 12 18.5Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div id="main-controls" class="controls-bar">
+        <div class="control-group">
+          <label for="width">Width</label>
+          <input
+            type="number"
+            id="width"
+            value="25"
+            min="3"
+            max="101"
+            step="1"
+          />
+        </div>
+        <div class="control-group">
+          <label for="height">Height</label>
+          <input
+            type="number"
+            id="height"
+            value="25"
+            min="3"
+            max="101"
+            step="1"
+          />
+        </div>
+        <div class="control-group">
+          <label for="lock-dims">Aspect</label>
+          <button id="lock-dims" class="icon-btn" title="Lock Dimensions">
+            <svg
+              class="unlocked"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 10.5C12.83 10.5 13.5 11.17 13.5 12V15C13.5 15.83 12.83 16.5 12 16.5C11.17 16.5 10.5 15.83 10.5 15V12C10.5 11.17 11.17 10.5 12 10.5ZM18 9H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6H9C9 4.34 10.34 3 12 3C13.66 3 15 4.34 15 6V9H6C4.9 9 4 9.9 4 11V21C4 22.1 4.9 23 6 23H18C19.1 23 20 22.1 20 21V11C20 9.9 19.1 9 18 9Z"
+              />
+            </svg>
+            <svg
+              class="locked"
+              style="display: none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 10.5C12.83 10.5 13.5 11.17 13.5 12V15C13.5 15.83 12.83 16.5 12 16.5C11.17 16.5 10.5 15.83 10.5 15V12C10.5 11.17 11.17 10.5 12 10.5ZM18 9H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V9H6C4.9 9 4 9.9 4 11V21C4 22.1 4.9 23 6 23H18C19.1 23 20 22.1 20 21V11C20 9.9 19.1 9 18 9Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="control-group toggle">
+          <label for="is-filled">Style</label>
+          <input type="checkbox" id="is-filled" class="style-toggle-checkbox" />
+          <label for="is-filled" class="style-toggle-label">
+            <span class="toggle-text">Outline</span>
+            <span class="toggle-text">Filled</span>
+          </label>
+        </div>
+        <div class="control-group toggle">
+          <label for="show-numbers">Numbers</label>
+          <input
+            type="checkbox"
+            id="show-numbers"
+            class="style-toggle-checkbox"
+          />
+          <label for="show-numbers" class="style-toggle-label">
+            <span class="toggle-text">Off</span>
+            <span class="toggle-text">On</span>
+          </label>
+        </div>
+        <div class="control-group toggle">
+          <label for="color-segments">Colors</label>
+          <input
+            type="checkbox"
+            id="color-segments"
+            class="style-toggle-checkbox"
+          />
+          <label for="color-segments" class="style-toggle-label">
+            <span class="toggle-text">Off</span>
+            <span class="toggle-text">On</span>
+          </label>
+        </div>
+        <button id="download-btn" class="primary-btn">Download as PNG</button>
+      </div>
+
+      <div id="build-guide-controls" class="controls-bar" style="display: none">
+        <button id="exit-guide-btn" class="primary-btn error">
+          Exit Guide
+        </button>
+        <button id="prev-step-btn" class="primary-btn">Previous Step</button>
+        <span id="step-counter" class="step-counter">Step 1 / 12</span>
+        <button id="next-step-btn" class="primary-btn">Next Step</button>
+      </div>
+
+      <div class="main-actions">
+        <span id="block-count" class="block-count"></span>
+        <button id="start-guide-btn" class="primary-btn secondary">
+          Start Building Guide
+        </button>
+      </div>
+
+      <p class="viewport-instructions">
+        Use mouse wheel to zoom, click and drag to pan.
+      </p>
+      <div id="grid-viewport" class="grid-viewport">
+        <canvas id="grid-canvas"></canvas>
+        <div class="viewport-controls">
+          <button id="zoom-out-btn" class="icon-btn">-</button>
+          <span id="zoom-level">100%</span>
+          <button id="zoom-in-btn" class="icon-btn">+</button>
+          <button id="reset-view-btn" class="icon-btn">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
